@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>TECHNOCRATS HOSPITAL</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signup.css" rel="stylesheet">
+    <style>
+      body {
+            background-image: url("img/background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+      }
+      .container{
+            background-color: #ffffff;
+      }
+      .hidden {
+            display: none;
+      }  
+  .success-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .success-icon {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .warning-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FF5733;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+</style>
+    </head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="name" placeholder="Name" required>
+                    <label for="name">Name</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="email" placeholder="Email address" required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    <label for="Password">Password</label>
+                    <i class="far fa-eye password-toggle" id="passwordToggle"></i>
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <div class="form-floating">
+                    <input type="password" class="form-control" placeholder="Re-Enter Password" id="confirmpassword" required>
+                    <label for="Confirm Password">Confirm Password</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" type="submit">Sign Up</button>
+            </div>
+        </div>
+    <div class="social-buttons">
+        <div class="social-button">
+          <a href="#">
+            <img src="img/google-logo.png" alt="Google Icon">
+          </a>
+        </div>
+        <div class="social-button">
+          <a href="#">
+            <img src="img/apple-logo.png" alt="Apple Icon">
+          </a>
+        </div>
+        <div class="social-button">
+          <a href="#">
+            <img src="img/microsoft-logo.png" alt="Microsoft Icon">
+          </a>
+        </div>
+      </div>
+      <div class="success-popup" id="successPopup">
+        <i class="fas fa-check-circle success-icon"></i>
+        Login successful!
+      </div>
+      <div class="warning-popup" id="warningPopup">
+        Passwords do not match. Please enter the same password.
+      </div>
+    </form>
+  </div>
+  <script src="js/popup.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const passwordInput = document.getElementById('password');
+      const passwordToggle = document.getElementById('passwordToggle');
+
+  
+      passwordToggle.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          passwordToggle.classList.remove('far', 'fa-eye');
+          passwordToggle.classList.add('far', 'fa-eye-slash');
+        } else {
+          passwordInput.type = 'password';
+          passwordToggle.classList.remove('far', 'fa-eye-slash');
+          passwordToggle.classList.add('far', 'fa-eye');
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>

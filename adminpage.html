@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TECHNOCRATS HOSPITAL</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/admin_page.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Appointment List</h2>
+        <ul id="appointment-list">
+        </ul>
+    </div>
+    
+    <script>
+        var storedList = localStorage.getItem("appointmentList");
+        if (storedList) {
+            var appointmentList = JSON.parse(storedList);
+            var listHTML = '';
+            for (var i = 0; i < appointmentList.length; i++) {
+                var appointment = appointmentList[i];
+                var appointmentNumber = i + 1;
+                listHTML += `
+                    <li id="appointment-${appointmentNumber}">
+                        <strong>Appointment Number:</strong> ${appointmentNumber}<br>
+                        <strong>Full Name:</strong> ${appointment.fullName}<br>
+                        <strong>Email Address:</strong> ${appointment.emailAddress}<br>
+                        <strong>Mobile Number:</strong> ${appointment.mobileNumber}<br>
+                        <strong>Doctor:</strong> ${appointment.doctor}<br>
+                        <strong>Appointment Date:</strong> ${appointment.appointmentDate}<br>
+                        <strong>Appointment Time:</strong> ${appointment.appointmentTime}<br>
+                        <strong>Problem:</strong> ${appointment.problem}
+                    </li>
+                    <hr>
+                `;
+            }
+            document.getElementById("appointment-list").innerHTML = listHTML;
+        }
+    </script>
+</body>
+</html>
