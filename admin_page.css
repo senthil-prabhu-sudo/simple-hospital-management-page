@@ -1,0 +1,63 @@
+:root {
+    --primary: #0463FA;
+    --light: #EFF5FF;
+    --dark: #1B2C51;
+}
+
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.fw-black {
+    font-weight: 900 !important;
+}
+
+    body {
+        font-family: "Font Awesome 5 Free";
+        margin: 0;
+        padding: 0;
+        background-image: url(../img/adminpage.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+    }
+
+    h2 {
+        color:var(--dark);
+        text-align: center;
+        margin-top: 20px;
+        font-size: 35px;
+    }
+
+    .container {
+        background-color:var(--primary);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    #appointment-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: var(--light);
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 18px;
+    }
+
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
